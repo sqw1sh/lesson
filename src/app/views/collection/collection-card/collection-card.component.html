@@ -1,0 +1,21 @@
+<div class="card" style="width: 100%">
+  <img
+    src="{{ product.image }}"
+    class="card-img-top"
+    alt="{{ product.title }}"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <p class="card-text">{{ product.description | textCut }}</p>
+    <p class="card-text">
+      {{ product.price | currency : "RUB" : "symbol-narrow" }}
+    </p>
+    <a
+      class="btn btn-primary"
+      [routerLink]="['/catalog', product.id]"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >Подробнее</a
+    >
+  </div>
+</div>
